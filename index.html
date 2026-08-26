@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--Background Typography-->
+    <div class="background-title" aria-hidden="true">
+        DAILY TASKS
+    </div>
+
+    <main class="dashboard">
+
+
+        <div class="background-stars" aria-hidden="true">
+            <span class="star star-1">✦</span>
+            <span class="star star-2">✧</span>
+            <span class="star star-3">✦</span>
+            <span class="star star-4">·</span>
+            <span class="star star-5">✧</span>
+            <span class="star star-6">✦</span>
+            <span class="star star-7">✧</span>
+            <span class="star star-8">·</span>
+            <span class="star star-9">✦</span>
+            <span class="star star-10">✧</span>
+            <span class="star star-11">·</span>
+            <span class="star star-12">✦</span>
+            <span class="star star-13">✧</span>
+            <span class="star star-14">·</span>
+            <span class="star star-15">✦</span>
+            <span class="star star-16">✧</span>
+            <span class="star star-17">·</span>
+            <span class="star star-18">✦</span>
+        </div>
+
+
+        <!--TOP SECTION-->
+
+        <header class="dashboard-header">
+            <div class="welcome">
+                <p class="eyebrow">WELCOME BACK</p>
+                <h1 id="user-name">Tyrah</h1>
+                <p class="greeting-text">
+                    What will you accomplish today?
+                </p>
+            </div>
+
+            <button
+                class="customize-btn"
+                id="customize-btn"
+                type="button"
+            >
+                Customize
+            </button>
+
+        </header>
+
+
+        <!--PERSONAL IMAGE-->
+        <section class="profile-card">
+            <div class="profile-image-wrapper">
+                <img
+                    id="profile-image"
+                    src=""
+                    alt="Your Profile"
+                >
+
+                <div class="image-placeholder" id="image-placeholder">
+                    <span>+</span>
+                    <p>Add an image</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!--MAIN TASK AREA-->
+
+        <section class="task-container">
+
+            <span class="card-star card-star-one">✦</span>
+            <span class="card-star card-star-two">✧</span>
+
+            <div class="task-header">
+
+
+                <div>
+                    <p class="section-label">YOUR DAY</p>
+                    <h2>Today's Tasks</h2>
+                </div>
+
+                <div class="task-progress">
+                    <span id="task-count">
+                        0 tasks
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!--ADD TASK-->
+
+            <form id="task-form" class="task-form">
+
+                <label for="task-input">
+                    Add a new task
+                </label>
+
+                <div class="input-wrapper">
+
+                    <input
+                        type="text"
+                        id="task-input"
+                        placeholder="what needs to be done?"
+                        autocomplete="off"
+                    >
+
+                    <button 
+                        type="submit" 
+                        id="add-task-btn"
+                    >
+                        Add task
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <ul 
+                id="task-list"
+                class="task-list"
+            >
+            </ul>
+
+            <!--EMPTY STATE-->
+
+            <div
+                id="empty-state"
+                class="empty-state"
+            >
+        
+                <span class="empty-icon">!</span>
+
+                <h3>
+                    Your Day is clear.
+                </h3>
+
+                <p>
+                    Add a task and start making progress.
+                </p>
+            </div>
+
+        </section>
+
+
+        <aside class="quote-card">
+
+            <span class="quote-mark">"</span>
+
+            <blockquote id="daily-quote">
+                Small progress is still progress.
+            </blockquote>
+
+            <p class="quote-author">
+                - Daily Reminder
+            </p>
+
+        </aside>
+
+        <!--IMAGE UPLOAD-->
+
+        <input
+            type="file"
+            id="image-upload"
+            accept="image/*"
+            hidden
+        >
+
+    </main>
+
+
+    <aside
+        class="customize-panel"
+        id="customize-panel"
+        aria-hidden="true"
+    >
+
+        <div class="panel-header">
+            <div>
+
+                <p class="section-label">PERSONALIZE</p>
+
+                <h2>Customize</h2>
+            </div>
+
+            <button
+                type="button"
+                id="close-panel"
+                class="close-panel"
+                aria-label="Close customization panel"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="customize-options">
+
+            <!--NAME-->
+
+            <div class="custom-option">
+
+                <label for="name-input">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name-input"
+                    placeholder="Enter Your Name"
+                >
+
+            </div>
+
+            <!--IMAGE-->
+
+            <div class="custom-option">
+
+                <label>
+                    Profile Image
+                </label>
+
+                <button
+                    type="button"
+                    id="upload-image-btn"
+                    class="secondary-btn"
+                >
+                    Upload image    
+                
+                </button>
+
+            </div>
+
+            <!--QUOTE-->
+
+            <div class="custom-option">
+
+                <label for="quote-input">
+                    Daily Quote
+                </label>
+
+
+                <textarea
+                    id="quote-input"
+                    rows="3"
+                    placeholder="Write something that inspires you..."
+                ></textarea>
+
+            </div>
+
+            <!-- THEME -->
+                <div class="custom-option">
+
+                <label>
+                    Color Theme
+                </label>
+
+                <div class="theme-options">
+
+                    <button
+                        type="button"
+                        class="theme-btn"
+                        data-theme="default"
+                    >
+                        Default
+                    </button>
+
+                    <button
+                            type="button"
+                            class="theme-btn"
+                            data-theme="midnight"
+                        >
+                            Midnight
+                    </button>
+
+                    <button
+                            type="button"
+                            class="theme-btn"
+                            data-theme="rose"
+                        >
+                            Rose
+                    </button>
+
+                    <button
+                            type="button"
+                            class="theme-btn"
+                            data-theme="lavender"
+                        >
+                            Lavender
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- SAVE -->
+            <button
+                type="button"
+                id="save-customization"
+                class="save-btn"
+            >
+                Save Changes
+            </button>
+
+        </div>
+
+    </aside>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
